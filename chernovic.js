@@ -44,8 +44,8 @@ class Pleer {
     document.getElementById("back-button").onclick = () => this.goBack();
 
     document.getElementById("add-track-button").onclick = () => {
-        const form = document.getElementById("add-track-form");
-        form.classList.add("hidden");
+      const form = document.getElementById("add-track-form");
+      form.classList.toggle("hidden");
     };
 
     document.getElementById("submit-track").onclick = () => {
@@ -57,6 +57,7 @@ class Pleer {
       if (title && artist && src && cover) {
         this.tracks.push({ title, artist, src, cover });
         this.renderTrackList();
+
         document.getElementById("add-track-form").classList.add("hidden");
         document.getElementById("track-title").value = "";
         document.getElementById("track-artist").value = "";
