@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Музыкальный плеер</title>
+  <link rel="stylesheet" href="laststyle.css" />
+</head>
+<body>
+
+  <div id="track-list">
+    <h2>Список треков</h2>
+    
+    <button id="add-track-button">➕ Добавить трек</button>
+
+    <div id="add-track-form" class="hidden">
+      <h3>Добавить новый трек</h3>
+      <input type="text" id="track-title" placeholder="Название трека" />
+      <input type="text" id="track-artist" placeholder="Исполнитель" />
+      <input type="text" id="track-src" placeholder="Ссылка на .mp3" />
+      <input type="text" id="track-cover" placeholder="Ссылка на обложку" />
+      <button id="submit-track">Добавить в плейлист</button>
+    </div>
+
+    <ul id="track-items"></ul>
+  </div>
+
+  <div id="player" class="hidden">
+    <img id="cover" src="" alt="Обложка" width="200" />
+    <h3 id="title">Название трека</h3>
+    <p id="artist">Исполнитель</p>
+
+    <audio id="audio" controls></audio>
+
+    <div class="controls">
+      <img src="assets/left.png" alt="Назад к списку" id="back-button" />
+      <img src="assets/rewind.png" alt="Предыдущий" id="prev-button" />
+      <img id="play-button" src="assets/play.png" alt="Пауза/Воспроизведение" />
+      <img src="assets/forward.png" alt="Следующий" id="next-button" />
+      <img src="assets/refresh.png" alt="Перемешать" id="shuffle-button" />
+    </div>
+  </div>
+
+  <script src="chernovic.js"></script>
+</body>
+</html>
