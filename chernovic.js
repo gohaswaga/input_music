@@ -43,9 +43,14 @@ class Pleer {
     document.getElementById("shuffle-button").onclick = () => this.shuffleTracks();
     document.getElementById("back-button").onclick = () => this.goBack();
 
-    document.getElementById("add-track-button").onclick = () => {
-      const form = document.getElementById("add-track-form");
+    const addButton = document.getElementById("add-track-button");
+    const form = document.getElementById("add-track-form");
+
+    addButton.onclick = () => {
       form.classList.toggle("hidden");
+      addButton.textContent = form.classList.contains("hidden")
+        ? "➕ Добавить трек"
+        : "✖ Закрыть форму";
     };
 
     document.getElementById("submit-track").onclick = () => {
@@ -58,7 +63,9 @@ class Pleer {
         this.tracks.push({ title, artist, src, cover });
         this.renderTrackList();
 
-        document.getElementById("add-track-form").classList.add("hidden");
+        form.classList.add("hidden");
+        addButton.textContent = "➕ Добавить трек";
+
         document.getElementById("track-title").value = "";
         document.getElementById("track-artist").value = "";
         document.getElementById("track-src").value = "";
